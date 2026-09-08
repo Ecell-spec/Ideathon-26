@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDEATHON — Certificate Portal | St. Peter's Engineering College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- decorative corner pieces, echoing the certificate art -->
+  <div class="deco deco-tl"></div>
+  <div class="deco deco-br"></div>
+
+  <header class="topbar">
+    <img src="assets/header-banner.png" alt="St. Peter's Engineering College — UGC Autonomous, Affiliated to JNTU Hyderabad" class="header-banner">
+  </header>
+
+  <main class="wrap">
+
+    <section class="hero">
+      <p class="kicker">Institution's Innovation Council &nbsp;·&nbsp; EDC &nbsp;·&nbsp; SPECIIE</p>
+      <h1>IDEATHON<span>Certificate Portal</span></h1>
+      <p class="lede">Enter your name exactly as you registered, and your Certificate of Participation
+        will be generated instantly — ready to preview and download.</p>
+    </section>
+
+    <section class="card" id="lookup-card">
+      <form id="lookup-form" autocomplete="off">
+        <label for="name-input">Your full name</label>
+        <div class="input-row">
+          <input
+            type="text"
+            id="name-input"
+            name="name"
+            placeholder="e.g. Sritan Vesangi"
+            required
+          >
+          <button type="submit" id="generate-btn">
+            <span class="btn-label">Get My Certificate</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div id="name-suggestions" class="name-suggestions" aria-live="polite" hidden></div>
+        <p class="hint">Start typing to see matching names from the participant list.</p>
+      </form>
+
+      <div id="status-box" class="status-box" hidden></div>
+    </section>
+
+    <section class="result" id="result-section" hidden>
+      <div class="cert-preview-wrap">
+        <canvas id="cert-canvas"></canvas>
+      </div>
+      <div class="result-actions">
+        <button id="download-png" class="btn-primary">Download PNG</button>
+        <button id="download-pdf" class="btn-secondary">Download PDF</button>
+        <button id="start-over" class="btn-ghost">Search another name</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Certificates are generated locally in your browser from the official IDEATHON participant list.
+      Trouble finding your name? Reach out to the IIC / EDC organizing team.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
